@@ -1,10 +1,12 @@
+// babel.config.js
+
 module.exports = function (api) {
   api.cache(true);
-  let plugins = [];
-
   return {
     presets: [['babel-preset-expo', { jsxImportSource: 'nativewind' }], 'nativewind/babel'],
-
-    plugins,
+    plugins: [
+      // Plugin lain bisa ditaruh di sini jika ada
+      'react-native-worklets/plugin', // <-- GANTI DENGAN INI DAN PASTIKAN INI YANG PALING AKHIR
+    ],
   };
 };
